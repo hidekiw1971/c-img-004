@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.content>figure {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    @include mq(md) {
+        width: 50%;
+    }
+}
+
+.content>figure::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: calc(70% / 100 * 100);
+    background: rgba(175, 238, 238, 1);
+
+    @include mq(md) {}
+
+}
+
+.content>figure>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    object-fit: cover;
+
+    @include mq(md) {}
+
+}
